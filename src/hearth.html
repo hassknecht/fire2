@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Hearth</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="hearth ambience-dusk">
+    <main class="room" aria-label="Cyber Hearth local fireplace">
+      <div class="background-sofa" aria-hidden="true"></div>
+      <section class="fireplace" aria-label="Drop stress into the fire">
+        <canvas id="ashCanvas" class="ash-canvas" aria-hidden="true"></canvas>
+        <div class="firebox" id="firebox">
+          <canvas id="fireCanvas" class="fire-canvas" aria-hidden="true"></canvas>
+          <div class="flame-css" aria-hidden="true">
+            <span class="flame flame-a"></span>
+            <span class="flame flame-b"></span>
+            <span class="flame flame-c"></span>
+          </div>
+          <p id="feedbackMessage" class="feedback-message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <form id="textBurnForm" class="glass-control text-burn" aria-label="Burn pasted text">
+        <label class="sr-only" for="stressText">Paste text to burn</label>
+        <textarea id="stressText" rows="2" placeholder="把烦心事贴在这里"></textarea>
+        <button type="submit">Burn</button>
+      </form>
+
+      <nav id="avatarRail" class="avatar-rail" aria-label="Symbolic avatars">
+        <button class="avatar-token" type="button" data-avatar="无理的甲方">无理的甲方</button>
+        <button class="avatar-token" type="button" data-avatar="拖延症">拖延症</button>
+        <button class="avatar-token" type="button" data-avatar="反复修改">反复修改</button>
+      </nav>
+
+      <button id="openSketch" class="glass-control icon-control sketch-open" type="button" aria-label="Open sketch canvas">Sketch</button>
+      <button id="openPrivacy" class="glass-control privacy-chip" type="button" aria-label="Read local-only privacy note">Local only</button>
+
+      <dialog id="sketchDialog" class="glass-dialog" aria-label="Sketch and toss">
+        <canvas id="sketchCanvas" width="560" height="320"></canvas>
+        <menu>
+          <button id="clearSketch" type="button">Clear</button>
+          <button id="burnSketch" type="button">Burn sketch</button>
+          <button id="closeSketch" type="button">Close</button>
+        </menu>
+      </dialog>
+
+      <dialog id="privacyDialog" class="glass-dialog privacy-note">
+        <p>Local only. 内容只在这个浏览器页面里参与动画，不上传、不保存，刷新后灰烬也会消失。</p>
+        <button id="closePrivacy" type="button">Close</button>
+      </dialog>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

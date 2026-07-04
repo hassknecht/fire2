@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Cyber Hearth",
+  "description": "A local-only ritual fireplace for burning stressful text, files, sketches, and symbolic avatars.",
+  "version": "0.1.0",
+  "chrome_url_overrides": {
+    "newtab": "src/hearth.html"
+  },
+  "permissions": [],
+  "host_permissions": []
+}
